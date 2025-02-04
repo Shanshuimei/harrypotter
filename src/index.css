@@ -1,0 +1,125 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000; /* 确保背景颜色一致 */
+}
+
+@font-face {
+  font-family: 'ZiXinFang';
+  src: url('/fonts/字心坊李林哥特体简体中文.ttf') format('truetype');
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ffffff; }
+  50% { box-shadow: 0 0 20px #ffffff; }
+  100% { box-shadow: 0 0 10px #ffffff; }
+}
+
+.glowing-hat {
+  animation: glow 2s infinite;
+}
+
+/* 分院帽思考动画 */
+.thinking-hat {
+  animation: thinking 2s infinite linear;
+}
+
+@keyframes thinking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 星星闪烁动画 */
+.twinkle-star {
+  position: absolute;
+  background: url('/images/kira.svg') no-repeat center center; /* 替换为SVG路径 */
+  background-size: contain;
+  animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 让每个星星有不同的动画延迟 */
+.twinkle-star:nth-child(1) { animation-delay: 0s; }
+.twinkle-star:nth-child(2) { animation-delay: 0.5s; }
+.twinkle-star:nth-child(3) { animation-delay: 1s; }
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate__fadeInOut {
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    transform: scale(0.475) translateY(60px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) translateY(2000px);
+    transform-origin: center bottom;
+  }
+}
+
+.animate__zoomOutDown {
+  animation: zoomOutDown 1s both;
+}
+
+.eye-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+}
+
+.eye {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* box-shadow: 0 0 10px #000 inset 0px 0px 10px rgba(0, 0, 0, 0.3); */
+  /* transition: box-shadow 0.2s ease-out; */
+}
+
+.pupil {
+  width: 25px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.2s ease-out;
+}
