@@ -281,13 +281,13 @@ function App() {
   function getHouseBadgeImage(finalHouse: string): string | undefined {
     switch (finalHouse) {
       case '格兰芬多':
-        return '/images/格兰芬多.png';
+        return './images/格兰芬多.png';
       case '赫奇帕奇':
-        return '/images/赫奇帕奇.png';
+        return './images/赫奇帕奇.png';
       case '拉文克劳':
-        return '/images/拉文克劳.png';
+        return './images/拉文克劳.png';
       case '斯莱特林':
-        return '/images/斯莱特林.png';
+        return './images/斯莱特林.png';
       default:
         return undefined;
     }
@@ -366,7 +366,7 @@ function App() {
             <div className="text-center">
               {/* 替换哈利波特字符为图片，并自适应调整大小 */}
               <div className="flex items-center justify-center mb-10">
-                <img src="/images/Harry-Potter-Logo.png" alt="Harry Potter" className="w-1/2" />
+                <img src="./images/Harry-Potter-Logo.png" alt="Harry Potter" className="w-1/2" />
                 <span className="text-3xl md:text-8xl tracking-[0.2em] text-white ml-4" 
                       style={{ fontFamily: "ZiXinFang, 'Times New Roman', serif" }}>
                   分院帽测试
@@ -464,16 +464,16 @@ function App() {
                   {/* 分院帽图片 */}
                   <div className="relative">
                     <img 
-                      src="/images/hat.png" 
+                      src="./images/hat.png" 
                       alt="Sorting Hat" 
                       className={`w-[50vh] h-[50vh] hat-image animate__animated ${isLoading ? 'thinking-hat' : ''}`}
                     />
                     <EyeContainer />
                     {isLoading && (
                       <>
-                        <img src="/images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '10%', left: '10%', width: '30px', height: '30px' }} />
-                        <img src="/images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '30%', left: '95%', width: '50px', height: '50px' }} />
-                        <img src="/images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '85%', left: '0%', width: '40px', height: '40px' }} />                   
+                        <img src="./images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '10%', left: '10%', width: '30px', height: '30px' }} />
+                        <img src="./images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '30%', left: '95%', width: '50px', height: '50px' }} />
+                        <img src="./images/kira.svg" className="twinkle-star animate__fadeInOut" style={{ top: '85%', left: '0%', width: '40px', height: '40px' }} />                   
                       </>
                     )}
                   </div>
